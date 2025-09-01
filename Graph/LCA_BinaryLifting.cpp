@@ -36,6 +36,8 @@ ll getKthAncestor(ll cur, ll k){
     }
     return cur;
 }
+// Remember when cur == -1 then up[cur][i] becomes invalid so check for those after changing cur
+
 ll lca(ll a, ll b){
     if (depth[a] < depth[b])swap(a, b);
 
@@ -50,6 +52,8 @@ ll lca(ll a, ll b){
     }
     return up[a][0];
 }
+
+//check for when a == b at the start because else then the up[a][0] would add 1 more level which is wrong
 
 
 int main(){
